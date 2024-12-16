@@ -1,9 +1,9 @@
-.h1game
+#h1game
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: lightgreen;
+    color: green;
     font-size: 5vw;
 }
 
