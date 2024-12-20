@@ -1,0 +1,291 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-Screen Background */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #8b0000, #004d00);
+    overflow: hidden;
+}
+
+/* Twinkling Stars Effect */
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: gold;
+    border-radius: 50%;
+    animation: twinkle 1ms infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Central UI Container */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Header with Glowing Effect */
+header {
+    margin: 20px 0;
+}
+
+#h1game {
+    font-size: 4vw;
+    color: gold;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffcc00, 0 0 30px #ffaa00;
+    transition: text-shadow 0.3s ease;
+}
+
+#h1game:hover {
+    text-shadow: 0 0 20px #ffd700, 0 0 30px #ffcc00, 0 0 40px #ffaa00;
+}
+
+/* Navigation Buttons with Glowing Effect */
+#headerdiv {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.buttons {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #228B22;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px #006400;
+}
+
+.buttons:hover {
+    background-color: #004d00;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00;
+}
+
+/* Main Content Section */
+.main-content {
+    margin: 30px auto;
+    font-size: 1.3rem;
+    animation: fadeIn 1.5s ease-out;
+    padding: 20px;
+    border: 2px solid #006400;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow & Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Instructions Container */
+.instructions-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left; /* Align all text to the left */
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #006400;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 1.2rem; /* Reduced font size for smaller text */
+    /* Set max height and enable scrolling */
+    max-height: 700px; /* Adjust as needed */
+    overflow-y: auto; /* Vertical scrolling */
+}
+
+
+/* Customize Scrollbar for Modern Browsers */
+.instructions-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.instructions-container::-webkit-scrollbar-thumb {
+    background: #228B22; /* Thumb color */
+    border-radius: 5px;
+}
+
+.instructions-container::-webkit-scrollbar-thumb:hover {
+    background: #006400; /* Thumb hover color */
+}
+
+.instructions-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+/* Timer Section */
+.timer-container {
+    position: relative;
+    z-index: 1;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #006400;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+}
+
+.timer-container h2 {
+    font-size: 2rem;
+    color: #228B22;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* Back Button Positioning */
+#back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #228B22;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+#back-btn:hover {
+    background-color: #004d00;
+    transform: scale(1.1);
+}
+
+/* Equal Button Sizes for Start, Pause, Reset */
+#start-timer-btn, #pause-timer-btn, #reset-timer-btn {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #228B22;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px #006400;
+    width: 100%; /* Ensures buttons are the same size */
+    margin: 10px 0;
+}
+
+#start-timer-btn:hover, #pause-timer-btn:hover, #reset-timer-btn:hover {
+    background-color: #004d00;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00;
+}
+
+/* Dropdown Menu Container Styling */
+.dropdown {
+    position: fixed; /* Use fixed to make it stay at the top left of the viewport */
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+/* Style for Dropdown Button */
+.dropbtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #228B22;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effects for Dropdown Menu Button */
+.dropbtn:hover {
+    background-color: #004d00;
+    transform: scale(1.1);
+}
+
+/* Dropdown Content - Hidden by Default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: #333;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Style the Links inside the Dropdown */
+.dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effects for each link */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: #228B22;
+    transform: translateX(5px);
+}
+
+/* Show Dropdown When Active */
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+}

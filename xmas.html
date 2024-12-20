@@ -1,12 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="xmas.css">
+    <link rel="stylesheet" href="style/xmas.css">
     <meta charset="UTF-8">
-    <meta name="viewport">
-    <title>Christmas Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Santa</title>
 </head>
-<body style="background-color: darkred">
-<h1 id="h1game">Christmas Game</h1>
+<body>
+<!-- Twinkling Stars in the Background -->
+<div id="stars"></div>
+
+<!-- Main Content Section -->
+<div class="container">
+    <!-- Header Section with Glow -->
+    <header>
+        <h1 id="h1game">Saving Santa</h1>
+    </header>
+
+    <!-- Navigation Dropdown Menu -->
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
+            <div class="dropdown-content" id="dropdown-menu">
+                <a href="instructions.html">Instructies</a>
+                <a href="timer.html">Timer</a>
+                <a href="credits.html">Credits</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Central Message Section -->
+    <div class="main-content">
+        <p>Welkom bij Saving Santa! 🎄🎲</p>
+        <p>Klik op start spel nadat je de instructies hebt gelezen!</p>
+    </div>
+</div>
+
+<!-- Link to External Script -->
+<script src="script/functioning.js"></script>
 </body>
 </html>
